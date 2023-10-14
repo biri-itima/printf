@@ -14,7 +14,7 @@ int print_int(long n, int base)
 	if (n < 0)
 	{
 		write(1, "-", 1);
-		return (print_int(-n, base) + 1;)
+		return (print_int(-n, base) + 1);
 	}
 	else if (n < base)
 	{
@@ -23,6 +23,7 @@ int print_int(long n, int base)
 	else
 	{
 		count = print_int(n / base, base);
-		return (count + print_int(n % base, base));
+		count = print_int(n % base, base);
+		return (count);
 	}
 }

@@ -5,7 +5,7 @@
  *
  * Return: number of characters printed
  */
-void print_char(int c) 
+int print_char(int c) 
 {
    return write(1, &c, 1);
 }
