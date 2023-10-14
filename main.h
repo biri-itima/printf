@@ -13,5 +13,4 @@ int print_unsigned(unsigned int n);
 int print_octal(unsigned int n);
 int print_hex(unsigned int n, int uppercase);
 int print_address(void *p);
-void _print_buffer(const char *data);
 #endif
