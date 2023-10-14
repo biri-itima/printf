@@ -12,7 +12,7 @@ int print_unsigned_digit(unsigned long int num)
 	if (num == 0)
 	{
 		count += print_char('0');
-		return count;
+		return (count);
 	}
 
 	while (num != 0)

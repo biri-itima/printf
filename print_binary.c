@@ -12,7 +12,7 @@ int print_binary(unsigned int num)
 	if (num == 0)
 	{
 		count += print_char('0');
-		return count;
+		return (count);
 	}
 
 	while (num != 0)

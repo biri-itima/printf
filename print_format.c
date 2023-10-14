@@ -16,11 +16,11 @@ int print_format(char specifier, va_list args)
 	else if (specifier == 'd' || specifier == 'i')
 		count += print_digit(va_arg(args, long int));
 	else if (specifier == 'b')
-    count += print_binary(va_arg(args, unsigned int));
+	count += print_binary(va_arg(args, unsigned int));
 	else if (specifier == 'u')
 		count += print_unsigned_digit(va_arg(args, unsigned long int));
 	else if (specifier == 'x' || specifier == 'X')
-    count += print_hex(va_arg(args, unsigned int), specifier);
+	count += print_hex(va_arg(args, unsigned int), specifier);
 	else
 		count += write(1, &specifier, 1);
 	return (count);

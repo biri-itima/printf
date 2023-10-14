@@ -14,7 +14,7 @@ int print_hex(unsigned int num, char specifier)
 	if (num == 0)
 	{
 		count += print_char('0');
-		return count;
+		return (count);
 	}
 
 	while (num != 0)
@@ -34,5 +34,5 @@ int print_hex(unsigned int num, char specifier)
 		}
 	}
 
-	return count;
+	return (count);
 }

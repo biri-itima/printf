@@ -5,7 +5,7 @@
  *
  * Return: number of characters printed
  */
-int print_str(char *str) 
+int print_str(char *str)
 {
 	int count = 0;
 

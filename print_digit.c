@@ -13,7 +13,7 @@ int print_digit(long int num)
 	{
 		count += print_char('-');
 		num = -num;
-	}*/
+	}
 
 	if (num == 0)
 	{
@@ -29,6 +29,7 @@ int print_digit(long int num)
 	while (divisor != 0)
 	{
 		int digit = num / divisor;
+
 		count += print_char(digit + '0');
 		num %= divisor;
 		divisor /= 10;
