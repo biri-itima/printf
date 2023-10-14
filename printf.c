@@ -18,6 +18,10 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
+			if (*format == '%')
+			{
+				count += print_char('%');
+			}
 			count += print_format(*format, args);
 			format++;
 		}
