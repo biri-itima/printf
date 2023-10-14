@@ -19,8 +19,6 @@ int print_format(char specifier, va_list args)
     count += print_binary(va_arg(args, unsigned int));
 	else if (specifier == 'u')
 		count += print_unsigned_digit(va_arg(args, unsigned long int));
-	else if (specifier == 'o')
-    count += print_octal(va_arg(args, unsigned int));
 	else if (specifier == 'x' || specifier == 'X')
     count += print_hex(va_arg(args, unsigned int), specifier);
 	else

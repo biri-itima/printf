@@ -12,7 +12,7 @@ int print_octal(unsigned int num)
 	if (num == 0)
 	{
 		count += print_char('0');
-		return count;
+		return (count);
 	}
 
 
@@ -27,5 +27,5 @@ int print_octal(unsigned int num)
 		count += print_char(octal[j] + '0');
 	}
 
-	return count;
+	return (count);
 }

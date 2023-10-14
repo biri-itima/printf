@@ -19,7 +19,7 @@ int print_hex(unsigned int num, char specifier)
 
 	while (num != 0)
 	{
-		hex[i++] = hex_digits[num % 16];
+		hex[++i] = hex_digits[num % 16];
 		num /= 16;
 	}
 

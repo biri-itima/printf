@@ -6,30 +6,32 @@
  */
 int print_digit(long int num)
 {
-	int count = 0, i = 0, j;
-	int digits[20];
+	int count = 0;
+	int divisor = 1;
 
 	if (num < 0)
 	{
 		count += print_char('-');
 		num = -num;
-	}
+	}*/
 
 	if (num == 0)
 	{
 		count += print_char('0');
-		return count;
+		return (count);
 	}
 
-	while (num != 0)
+	while (num / divisor > 9)
 	{
-		digits[i++] = num % 10;
-		num /= 10;
+		divisor *= 10;
 	}
 
-	for (j = i - 1; j >= 0; j--)
+	while (divisor != 0)
 	{
-		count += print_char(digits[j] + '0');
+		int digit = num / divisor;
+		count += print_char(digit + '0');
+		num %= divisor;
+		divisor /= 10;
 	}
 
 	return (count);

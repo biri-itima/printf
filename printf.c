@@ -19,12 +19,13 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			count += print_format(*format, args);
+			format++;
 		}
 		else
 		{
 			write(1, format, 1);
-			format++;
-			count++;
+			++format;
+			++count;
 		}
 	}
 	va_end(args);
