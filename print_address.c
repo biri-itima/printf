@@ -11,10 +11,6 @@ int print_address(void *p)
 	unsigned long int address = (unsigned long int)p;
 	int count = 0;
 
-	_putchar('0');
-	_putchar('x');
-	count += 2;
-
 	if (address / 16)
 	{
 		count += print_hex(address / 16, 0);
