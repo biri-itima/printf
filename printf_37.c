@@ -6,6 +6,7 @@
 int printf_37(void)
 {
 	char letter = 37;
+	
 	_putchar(letter);
 	return (1);
 }
