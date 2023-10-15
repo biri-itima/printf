@@ -2,30 +2,30 @@
 
 /**
  * printf_pointer - prints an hexgecimal number.
- * @val: arguments.
+ * @arg: arguments.
  * Return: counter.
  */
-int printf_pointer(va_list val)
+int printf_pointer(va_list arg)
 {
-	void *p;
-	char *s = "(nil)";
-	long int a;
-	int b;
+	void *ptr;
+	char *str = "(nil)";
+	long int num;
+	int count;
 	int i;
 
-	p = va_arg(val, void*);
-	if (p == NULL)
+	ptr = va_arg(arg, void*);
+	if (ptr == NULL)
 	{
-		for (i = 0; s[i] != '\0'; i++)
+		for (i = 0; str[i] != '\0'; i++)
 		{
-			_putchar(s[i]);
+			_putchar(str[i]);
 		}
 		return (i);
 	}
 
-	a = (unsigned long int)p;
+	num = (unsigned long int)ptr;
 	_putchar('0');
 	_putchar('x');
-	b = printf_hex_aux(a);
-	return (b + 2);
+	count = printf_hex_aux(num);
+	return (count + 2);
 }
