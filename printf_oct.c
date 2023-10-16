@@ -2,15 +2,15 @@
 
 /**
  * printf_oct - prints an octal number.
- * @arg_list: arguments.
+ * @val: arguments.
  * Return: counter.
  */
-int printf_oct(va_list arg_list)
+int printf_oct(va_list val)
 {
-	int index;
-	int *num_array;
+	int i;
+	int *array;
 	int counter = 0;
-	unsigned int num = va_arg(arg_list, unsigned int);
+	unsigned int num = va_arg(val, unsigned int);
 	unsigned int temp = num;
 
 	while (num / 8 != 0)
@@ -19,17 +19,17 @@ int printf_oct(va_list arg_list)
 		counter++;
 	}
 	counter++;
-	num_array = malloc(counter * sizeof(int));
+	array = malloc(counter * sizeof(int));
 
-	for (index = 0; index < counter; index++)
+	for (i = 0; i < counter; i++)
 	{
-		num_array[index] = temp % 8;
+		array[i] = temp % 8;
 		temp /= 8;
 	}
-	for (index = counter - 1; index >= 0; index--)
+	for (i = counter - 1; i >= 0; i--)
 	{
-		_putchar(num_array[index] + '0');
+		_putchar(array[i] + '0');
 	}
-	free(num_array);
+	free(array);
 	return (counter);
 }

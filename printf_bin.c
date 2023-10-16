@@ -2,15 +2,15 @@
 
 /**
  * printf_bin - prints a binary number.
- * @arg_list: arguments.
+ * @val: arguments.
  * Return: 1.
  */
-int printf_bin(va_list arg_list)
+int printf_bin(va_list val)
 {
 	int flag = 0;
-	int count = 0;
+	int cont = 0;
 	int i, a = 1, b;
-	unsigned int num = va_arg(arg_list, unsigned int);
+	unsigned int num = va_arg(val, unsigned int);
 	unsigned int p;
 
 	for (i = 0; i < 32; i++)
@@ -22,13 +22,13 @@ int printf_bin(va_list arg_list)
 		{
 			b = p >> (31 - i);
 			_putchar(b + 48);
-			count++;
+			cont++;
 		}
 	}
-	if (count == 0)
+	if (cont == 0)
 	{
-		count++;
+		cont++;
 		_putchar('0');
 	}
-	return (count);
+	return (cont);
 }

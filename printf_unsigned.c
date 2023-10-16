@@ -6,39 +6,39 @@
  */
 int printf_unsigned(va_list args)
 {
-	unsigned int num1 = va_arg(args, unsigned int);
-	int num2, last_digit = num1 % 10, digit, exp = 1;
-	int  count = 1;
+	unsigned int n = va_arg(args, unsigned int);
+	int num, last = n % 10, digit, exp = 1;
+	int  i = 1;
 
-	num1 = num1 / 10;
-	num2 = num1;
+	n = n / 10;
+	num = n;
 
-	if (last_digit < 0)
+	if (last < 0)
 	{
 		_putchar('-');
-		num2 = -num2;
-		num1 = -num1;
-		last_digit = -last_digit;
-		count++;
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
 	}
-	if (num2 > 0)
+	if (num > 0)
 	{
-		while (num2 / 10 != 0)
+		while (num / 10 != 0)
 		{
 			exp = exp * 10;
-			num2 = num2 / 10;
+			num = num / 10;
 		}
-		num2 = num1;
+		num = n;
 		while (exp > 0)
 		{
-			digit = num2 / exp;
+			digit = num / exp;
 			_putchar(digit + '0');
-			num2 = num2 - (digit * exp);
+			num = num - (digit * exp);
 			exp = exp / 10;
-			count++;
+			i++;
 		}
 	}
-	_putchar(last_digit + '0');
+	_putchar(last + '0');
 
-	return (count);
+	return (i);
 }

@@ -5,8 +5,6 @@
  */
 int printf_37(void)
 {
-	char letter = 37;
-	
-	_putchar(letter);
+	_putchar(37);
 	return (1);
 }

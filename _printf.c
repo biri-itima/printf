@@ -1,12 +1,12 @@
 #include "main.h"
 /**
  * _printf - is a function that selects the correct function to print.
- * @fmt: identifier to look for.
+ * @format: identifier to look for.
  * Return: the length of the string.
  */
-int _printf(const char * const fmt, ...)
+int _printf(const char * const format, ...)
 {
-	convert_match matches[] = {
+	convert_match m[] = {
 		{"%s", printf_string}, {"%c", printf_char},
 		{"%%", printf_37},
 		{"%i", printf_int}, {"%d", printf_dec}, {"%r", printf_srev},
@@ -16,30 +16,30 @@ int _printf(const char * const fmt, ...)
 	};
 
 	va_list args;
-	int i = 0, j, length = 0;
+	int i = 0, j, len = 0;
 
-	va_start(args, fmt);
-	if (fmt == NULL || (fmt[0] == '%' && fmt[1] == '\0'))
+	va_start(args, format);
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
 Here:
-	while (fmt[i] != '\0')
+	while (format[i] != '\0')
 	{
 		j = 13;
 		while (j >= 0)
 		{
-			if (matches[j].id[0] == fmt[i] && matches[j].id[1] == fmt[i + 1])
+			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])
 			{
-				length += matches[j].f(args);
+				len += m[j].f(args);
 				i = i + 2;
 				goto Here;
 			}
 			j--;
 		}
-		_putchar(fmt[i]);
-		length++;
+		_putchar(format[i]);
+		len++;
 		i++;
 	}
 	va_end(args);
-	return (length);
+	return (len);
 }
